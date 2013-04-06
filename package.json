@@ -1,0 +1,43 @@
+{
+  "name": "grunt-sails",
+  "description": "Grunt task to run sails apps",
+  "version": "0.0.0",
+  "homepage": "https://github.com/colin/grunt-sails",
+  "author": {
+    "name": "Colin Wren",
+    "email": "colin@cawren.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/colinwren/grunt-sails.git"
+  },
+  "bugs": {
+    "url": "https://github.com/colinwren/grunt-sails/issues"
+  },
+  "scripts": {
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/colinwren/grunt-sails/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "tasks/sails.js",
+  "bin": "bin/grunt-sails",
+  "engines": {
+    "node": "~0.10.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt": "~0.4.0"
+  },
+  "dependencies": {
+    "forever": "~0.10.0"
+  }
+}
