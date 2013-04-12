@@ -1,4 +1,3 @@
-
 /*
  * grunt-sails
  *
@@ -6,26 +5,23 @@
  * Licensed under the MIT license.
  */
 
-
 module.exports = function(grunt) {
 
   var spawn = require('child_process').spawn;
-  var forever = require('forever');
 
-  grunt.registerMultiTask('sails', 'Start a sails app.', function() {
+  grunt.registerMultiTask('sails', 'Start a sails app with forever', function() {
 
-    var options = this.options({
-    });
-
-    // Start server.
     grunt.log.writeln('Starting sails server');
-    var sails = forever.start ('app.js', '-w');
-    //var sails = spawn('forever', ['-w', 'app.js']);
-    sails.stdout.on('data', function (data) {
-        console.log('stdout: ' + data);
-    });
-        //this.async();
-        grunt.log.write('Waiting forever...\n');
-  });
 
+    // Start server and restart when files change
+    var sails = spawn('./node_modules/grunt-sails/node_modules/forever/bin/forever', ['-w', 'app.js']);
+
+    sails.stdout.on('data', function (data) {
+      console.log('' + data);
+    });
+
+    sails.stderr.on('data', function (data) {
+      console.log('' + data);
+    });
+  });
 };
